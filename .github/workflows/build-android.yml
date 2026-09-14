@@ -7,6 +7,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout
@@ -68,8 +70,17 @@ jobs:
         id: ver
         working-directory: android/app
         run: |
-          CODE=$(grep -oP 'versionCode\s+\K[0-9]+' build.gradle)
-          NAME=$(grep -oP 'versionName\s+"\K[^"]+' build.gradle)
+          # Strip comment lines first — build.gradle has an explanatory
+          # comment that also contains the literal text "versionCode 1 /
+          # versionName "1.0"" (the OLD version, for context), which a
+          # naive grep over the whole file matches too, producing two
+          # lines of output instead of one and breaking $GITHUB_OUTPUT.
+          CODE=$(grep -v '^\s*//' build.gradle | grep -oP 'versionCode\s+\K[0-9]+' | head -n1)
+          NAME=$(grep -v '^\s*//' build.gradle | grep -oP 'versionName\s+"\K[^"]+' | head -n1)
+          if [ -z "$CODE" ] || [ -z "$NAME" ]; then
+            echo "::error::Could not read versionCode/versionName from build.gradle"
+            exit 1
+          fi
           echo "code=$CODE" >> "$GITHUB_OUTPUT"
           echo "name=$NAME" >> "$GITHUB_OUTPUT"
           echo "Building versionCode=$CODE versionName=$NAME"
