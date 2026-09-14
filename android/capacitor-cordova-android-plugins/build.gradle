@@ -1,0 +1,19 @@
+// AUTO-GENERATED placeholder. `npx cap sync android` regenerates this
+// module (and its manifest/build.gradle) automatically based on any
+// Cordova plugins found in package.json. This project uses none, so the
+// module is intentionally empty.
+ext {
+    cordovaConfigXmlFile = null
+}
+apply plugin: 'com.android.library'
+
+android {
+    namespace 'com.inthevoid.platform.cordova.plugins'
+    compileSdk androidxCoreVersion != null ? rootProject.ext.compileSdkVersion : 35
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+    }
+}
+
+dependencies {}

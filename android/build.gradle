@@ -1,0 +1,26 @@
+// Top-level build file for the IN THE VOID Android app.
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.7.2'
+        // Required to read google-services.json and wire Firebase Cloud
+        // Messaging (FCM) into the app.
+        classpath 'com.google.gms:google-services:4.4.2'
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+apply from: "variables.gradle"
+
+tasks.register('clean', Delete) {
+    delete rootProject.buildDir
+}

@@ -1,0 +1,3 @@
+rootProject.name = 'IN THE VOID'
+include ':app'
+apply from: 'capacitor.settings.gradle'

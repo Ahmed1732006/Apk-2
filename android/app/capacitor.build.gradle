@@ -1,0 +1,18 @@
+// AUTO-GENERATED FILE. DO NOT MODIFY BY HAND. This file is regenerated
+// each time `npx cap sync android` runs (always part of the CI build),
+// based on the Capacitor plugins listed in package.json. This checked-in
+// copy is only a fallback for a manual build without `cap sync` first.
+android {
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_21
+        targetCompatibility JavaVersion.VERSION_21
+    }
+}
+
+dependencies {
+    implementation project(':capacitor-app')
+    implementation project(':capacitor-push-notifications')
+    implementation project(':capacitor-community-fcm')
+    implementation project(':capacitor-filesystem')
+    implementation project(':capacitor-community-file-opener')
+}

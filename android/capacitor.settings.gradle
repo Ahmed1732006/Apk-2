@@ -1,0 +1,26 @@
+// AUTO-GENERATED FILE. DO NOT MODIFY BY HAND.
+// This file is regenerated every time `npx cap sync android` runs (always
+// part of the CI build and of `npm run android:prepare`), based on the
+// Capacitor plugins listed in package.json. The version below is only a
+// fallback so a manual `./gradlew`/`gradle` invocation without first
+// running `cap sync` doesn't hard-fail with a missing-file error.
+include ':capacitor-android'
+project(':capacitor-android').projectDir = new File('../node_modules/@capacitor/android/capacitor')
+
+include ':capacitor-cordova-android-plugins'
+project(':capacitor-cordova-android-plugins').projectDir = new File('./capacitor-cordova-android-plugins')
+
+include ':capacitor-app'
+project(':capacitor-app').projectDir = new File('../node_modules/@capacitor/app/android')
+
+include ':capacitor-push-notifications'
+project(':capacitor-push-notifications').projectDir = new File('../node_modules/@capacitor/push-notifications/android')
+
+include ':capacitor-community-fcm'
+project(':capacitor-community-fcm').projectDir = new File('../node_modules/@capacitor-community/fcm/android')
+
+include ':capacitor-filesystem'
+project(':capacitor-filesystem').projectDir = new File('../node_modules/@capacitor/filesystem/android')
+
+include ':capacitor-community-file-opener'
+project(':capacitor-community-file-opener').projectDir = new File('../node_modules/@capacitor-community/file-opener/android')

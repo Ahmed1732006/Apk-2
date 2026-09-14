@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#0B1220</color>
+    <color name="colorPrimaryDark">#05070D</color>
+    <color name="colorAccent">#3B82F6</color>
+    <!-- Matches the new IN THE VOID icon's dark card background. -->
+    <color name="splashBackground">#05070D</color>
+    <!-- Accent used to tint the monochrome notification icon. -->
+    <color name="notificationColor">#3B82F6</color>
+</resources>
