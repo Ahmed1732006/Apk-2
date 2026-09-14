@@ -1,0 +1,24 @@
+{
+  "name": "in-the-void-android",
+  "private": true,
+  "version": "1.0.0",
+  "description": "IN THE VOID Android application",
+  "scripts": {
+    "build:web": "node scripts/prepare-web.mjs",
+    "android:prepare": "npm run build:web && (test -f android/app/build.gradle || npx cap add android) && npx cap sync android",
+    "android:build": "npm run android:prepare && cd android && gradle assembleDebug"
+  },
+  "dependencies": {
+    "@capacitor/android": "^7.0.0",
+    "@capacitor/core": "^7.0.0",
+    "@capacitor/app": "^7.0.0",
+    "@capacitor/push-notifications": "^7.0.0",
+    "@capacitor-community/fcm": "^7.0.0",
+    "@capacitor/filesystem": "^7.0.0",
+    "@capacitor-community/file-opener": "^6.0.1"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^7.0.0",
+    "@capacitor/assets": "^3.0.5"
+  }
+}
